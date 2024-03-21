@@ -1,0 +1,25 @@
+name: 'Reporters validator'
+description: 'Run Reporters validator for checking Qase reporter functionality.'
+branding:
+  icon: 'eye'
+inputs:
+  project-code:
+    description: 'The project code of the Qase project'
+    required: true
+  token:
+    description: 'The token for the Qase API'
+    required: true
+  run-id:
+    description: 'The ID of the Qase test run'
+    required: true
+  result-path:
+    description: 'The path to the results file'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.project-code }}
+    - ${{ inputs.token }}
+    - ${{ inputs.run-id }}
+    - ${{ inputs.result-path }}
