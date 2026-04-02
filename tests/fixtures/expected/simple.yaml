@@ -1,0 +1,20 @@
+run:
+  stats:
+    total: 2
+    passed: 1
+    failed: 1
+
+results:
+  - signature: "MyTests.PassingTest"
+    title: "Test passes"
+    status: "passed"
+    relations:
+      suite:
+        data:
+          - title: "MyTests"
+
+  - signature: "MyTests.FailingTest"
+    title: "Test fails"
+    status: "failed"
+    fields:
+      severity: "critical"
