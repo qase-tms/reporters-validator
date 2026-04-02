@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reporters-validator"
+version = "2.0.0"
+description = "Offline integration testing tool for Qase reporters"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1",
+    "jsonschema>=4.20",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+reporters-validator = "reporters_validator.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
