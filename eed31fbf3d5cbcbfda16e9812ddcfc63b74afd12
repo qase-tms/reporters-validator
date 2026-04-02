@@ -1,0 +1,27 @@
+tests/fixtures/expected/simple.yaml
+  5519baaaf18427ce 1-20
+reporters_validator/expected_reader.py
+  5519baaaf18427ce 1-24
+tests/test_expected_reader.py
+  5519baaaf18427ce 1-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "eed31fbf3d5cbcbfda16e9812ddcfc63b74afd12",
+  "prompts": {
+    "5519baaaf18427ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7c93cce3-98ca-4af8-9fc4-eae23bf3df6e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dmitrii Gridnev",
+      "messages": [],
+      "total_additions": 194,
+      "total_deletions": 0,
+      "accepted_lines": 2386,
+      "overriden_lines": 0
+    }
+  }
+}
