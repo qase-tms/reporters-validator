@@ -1,0 +1,36 @@
+{
+  "title": "Test Run",
+  "execution": {
+    "start_time": 1700000000000,
+    "end_time": 1700000010000,
+    "duration": 10000,
+    "cumulative_duration": 8000
+  },
+  "stats": {
+    "total": 2,
+    "passed": 1,
+    "failed": 1,
+    "skipped": 0,
+    "blocked": 0,
+    "invalid": 0,
+    "muted": 0
+  },
+  "results": [
+    {
+      "id": "aaa-111",
+      "title": "Test passes",
+      "status": "passed",
+      "duration": 5000,
+      "thread": "main"
+    },
+    {
+      "id": "bbb-222",
+      "title": "Test fails",
+      "status": "failed",
+      "duration": 3000,
+      "thread": "main"
+    }
+  ],
+  "threads": ["main"],
+  "environment": "local"
+}

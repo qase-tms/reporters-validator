@@ -1,0 +1,25 @@
+{
+  "id": "aaa-111",
+  "title": "Test passes",
+  "signature": "MyTests.PassingTest",
+  "execution": {
+    "status": "passed",
+    "start_time": 1700000000000,
+    "end_time": 1700000005000,
+    "duration": 5000,
+    "thread": "main"
+  },
+  "fields": {},
+  "attachments": [],
+  "steps": [],
+  "params": {},
+  "param_groups": [],
+  "relations": {
+    "suite": {
+      "data": [
+        {"title": "MyTests"}
+      ]
+    }
+  },
+  "muted": false
+}

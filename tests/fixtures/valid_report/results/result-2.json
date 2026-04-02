@@ -1,0 +1,27 @@
+{
+  "id": "bbb-222",
+  "title": "Test fails",
+  "signature": "MyTests.FailingTest",
+  "execution": {
+    "status": "failed",
+    "start_time": 1700000005000,
+    "end_time": 1700000008000,
+    "duration": 3000,
+    "stacktrace": "AssertionError: expected true",
+    "thread": "main"
+  },
+  "fields": {"severity": "critical"},
+  "attachments": [],
+  "steps": [],
+  "params": {},
+  "param_groups": [],
+  "relations": {
+    "suite": {
+      "data": [
+        {"title": "MyTests"}
+      ]
+    }
+  },
+  "muted": false,
+  "message": "Test failed"
+}
