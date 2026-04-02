@@ -1,0 +1,29 @@
+.gitignore
+  5519baaaf18427ce 1-7
+reporters_validator/cli.py
+  5519baaaf18427ce 1-25
+pyproject.toml
+  5519baaaf18427ce 1-27
+reporters_validator/__init__.py
+  5519baaaf18427ce 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "7992bc9b81d08a81463d50a31018ce28346fa962",
+  "prompts": {
+    "5519baaaf18427ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7c93cce3-98ca-4af8-9fc4-eae23bf3df6e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dmitrii Gridnev",
+      "messages": [],
+      "total_additions": 2253,
+      "total_deletions": 2,
+      "accepted_lines": 2252,
+      "overriden_lines": 0
+    }
+  }
+}
