@@ -1,4 +1,10 @@
+import sys
+
 import click
+
+from reporters_validator.schema_validator import validate_schema
+from reporters_validator.data_validator import validate_data
+from reporters_validator.diff_reporter import format_errors
 
 
 @click.group()
@@ -14,7 +20,30 @@ def main():
 @click.option("--schema-only", is_flag=True, default=False, help="Only validate schema, skip data validation")
 def validate(report_dir, schema_dir, expected, schema_only):
     """Validate a report against schema and expected data."""
-    click.echo("validate: not implemented yet")
+    from pathlib import Path
+
+    report_dir = Path(report_dir)
+    schema_dir = Path(schema_dir)
+
+    if not schema_only and not expected:
+        click.echo("Error: --expected is required unless --schema-only is used.", err=True)
+        sys.exit(2)
+
+    # Schema validation
+    schema_errors = validate_schema(report_dir, schema_dir)
+
+    # Data validation
+    data_errors = []
+    if not schema_only and expected:
+        data_errors = validate_data(report_dir, Path(expected))
+
+    # Report
+    if schema_errors or data_errors:
+        output = format_errors(schema_errors, data_errors)
+        click.echo(output)
+        sys.exit(1)
+
+    click.echo("All validations passed.")
 
 
 @main.command()
