@@ -1,0 +1,31 @@
+reporters_validator/report_reader.py
+  5519baaaf18427ce 1-32
+tests/fixtures/valid_report/run.json
+  5519baaaf18427ce 1-36
+tests/fixtures/valid_report/results/result-1.json
+  5519baaaf18427ce 1-25
+tests/fixtures/valid_report/results/result-2.json
+  5519baaaf18427ce 1-27
+tests/test_report_reader.py
+  5519baaaf18427ce 1-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "10e7932117118c87ae6a83d3f284dbe8af518fda",
+  "prompts": {
+    "5519baaaf18427ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7c93cce3-98ca-4af8-9fc4-eae23bf3df6e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dmitrii Gridnev",
+      "messages": [],
+      "total_additions": 155,
+      "total_deletions": 0,
+      "accepted_lines": 2347,
+      "overriden_lines": 0
+    }
+  }
+}
