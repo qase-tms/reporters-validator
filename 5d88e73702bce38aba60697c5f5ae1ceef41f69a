@@ -1,0 +1,25 @@
+reporters_validator/matcher.py
+  5519baaaf18427ce 1-49
+tests/test_matcher.py
+  5519baaaf18427ce 1-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "5d88e73702bce38aba60697c5f5ae1ceef41f69a",
+  "prompts": {
+    "5519baaaf18427ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7c93cce3-98ca-4af8-9fc4-eae23bf3df6e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dmitrii Gridnev",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 2298,
+      "overriden_lines": 0
+    }
+  }
+}
