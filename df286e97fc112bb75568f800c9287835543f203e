@@ -1,0 +1,27 @@
+reporters_validator/prepare.py
+  5519baaaf18427ce 1-51
+tests/test_prepare.py
+  5519baaaf18427ce 1-50
+reporters_validator/cli.py
+  5519baaaf18427ce 54-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "df286e97fc112bb75568f800c9287835543f203e",
+  "prompts": {
+    "5519baaaf18427ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7c93cce3-98ca-4af8-9fc4-eae23bf3df6e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dmitrii Gridnev",
+      "messages": [],
+      "total_additions": 57,
+      "total_deletions": 1,
+      "accepted_lines": 2299,
+      "overriden_lines": 0
+    }
+  }
+}
