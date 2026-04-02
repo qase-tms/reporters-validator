@@ -51,4 +51,9 @@ def validate(report_dir, schema_dir, expected, schema_only):
 @click.option("--output", required=True, type=click.Path(), help="Output path for expected YAML file")
 def prepare(report_dir, output):
     """Generate expected YAML file from an existing report."""
-    click.echo("prepare: not implemented yet")
+    from pathlib import Path
+    from reporters_validator.prepare import generate_expected, write_expected
+
+    data = generate_expected(Path(report_dir))
+    write_expected(data, Path(output))
+    click.echo(f"Expected file written to: {output}")
