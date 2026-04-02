@@ -1,0 +1,25 @@
+tests/test_diff_reporter.py
+  5519baaaf18427ce 1-43
+reporters_validator/diff_reporter.py
+  5519baaaf18427ce 1-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "3780e8a4c98267178c1b5e5d1b04a5a74bd89bd5",
+  "prompts": {
+    "5519baaaf18427ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7c93cce3-98ca-4af8-9fc4-eae23bf3df6e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dmitrii Gridnev",
+      "messages": [],
+      "total_additions": 80,
+      "total_deletions": 0,
+      "accepted_lines": 2272,
+      "overriden_lines": 0
+    }
+  }
+}
