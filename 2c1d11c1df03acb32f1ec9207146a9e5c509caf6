@@ -1,0 +1,33 @@
+tests/test_schema_loader.py
+  5519baaaf18427ce 1-47
+reporters_validator/schema_loader.py
+  5519baaaf18427ce 1-64
+tests/fixtures/schemas/root.yaml
+  5519baaaf18427ce 1-65
+tests/fixtures/schemas/models/step.yaml
+  5519baaaf18427ce 1-42
+tests/fixtures/schemas/models/attachment.yaml
+  5519baaaf18427ce 1-16
+tests/fixtures/schemas/result.yaml
+  5519baaaf18427ce 1-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "2c1d11c1df03acb32f1ec9207146a9e5c509caf6",
+  "prompts": {
+    "5519baaaf18427ce": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7c93cce3-98ca-4af8-9fc4-eae23bf3df6e",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dmitrii Gridnev",
+      "messages": [],
+      "total_additions": 323,
+      "total_deletions": 8,
+      "accepted_lines": 2507,
+      "overriden_lines": 0
+    }
+  }
+}
