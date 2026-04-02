@@ -1,49 +1,110 @@
-# Qase reporter's validator
+# Qase Reporters Validator
 
-This validator is used to validate the Qase reporter's functionality. It compares the expected results of the reporter
-with the results of the Qase API.
+Offline integration testing tool for Qase reporters. Validates local JSON reports
+(generated in `mode=report`) against YAML schemas and expected data files.
 
 ## Installation
 
-Run the following command to install the required packages:
-
 ```bash
-pip install -r requirements.txt
+pip install git+https://github.com/qase-tms/reporters-validator.git
 ```
 
 ## Usage
 
-This tools has the following mode:
-
-- `validate` - validates the reporter's results with the Qase API
-- `prepare` - prepares the expected results for the reporter
-
 ### Validate
 
-To validate the reporter's results with the Qase API, run the following command:
+Full validation (schema + data):
 
 ```bash
-python main.py --mode validate --project-code <project_code> --token <token> --testrun-id <testrun_id> --input <input_file>
+reporters-validator validate \
+  --report-dir ./build/qase-report \
+  --schema-dir ./specs/report/schemas \
+  --expected ./expected/my-tests.yaml
 ```
 
-Where:
+Schema-only validation:
 
-- `project-code` - the code of the project in Qase
-- `token` - the token to access the Qase API
-- `testrun-id` - the id of the test run in Qase
-- `input` - the file with the excepted results
+```bash
+reporters-validator validate \
+  --report-dir ./build/qase-report \
+  --schema-dir ./specs/report/schemas \
+  --schema-only
+```
 
 ### Prepare
 
-To prepare the expected results for the reporter, run the following command:
+Generate an expected file from an existing report:
 
 ```bash
-python main.py --mode prepare --project-code <project_code> --token <token> --testrun-id <testrun_id> --output <output_file>
+reporters-validator prepare \
+  --report-dir ./build/qase-report \
+  --output ./expected/my-tests.yaml
 ```
 
-Where:
+Then review and edit the generated file — remove fields you don't want to check
+and adjust expected values.
 
-- `project-code` - the code of the project in Qase
-- `token` - the token to access the Qase API
-- `testrun-id` - the id of the test run in Qase
-- `output` - the file to save the expected results
+### Exit Codes
+
+- `0` — all validations passed
+- `1` — validation failures
+- `2` — invalid arguments
+
+## CI Integration
+
+```yaml
+steps:
+  - uses: actions/setup-python@v5
+    with:
+      python-version: '3.12'
+
+  - name: Install validator
+    run: pip install git+https://github.com/qase-tms/reporters-validator.git
+
+  - name: Run tests in report mode
+    run: QASE_MODE=report dotnet test  # or pytest, jest, etc.
+
+  - name: Validate report
+    run: |
+      reporters-validator validate \
+        --report-dir ./build/qase-report \
+        --schema-dir ./specs/report/schemas \
+        --expected ./expected/my-tests.yaml
+```
+
+## Expected File Format
+
+```yaml
+run:
+  stats:
+    total: 5
+    passed: 3
+    failed: 2
+
+results:
+  - signature: "MyTests.PassingTest"
+    status: "passed"
+    relations:
+      suite:
+        data:
+          - title: "MyTests"
+
+  - signature: "MyTests.FailingTest"
+    status: "failed"
+    fields:
+      severity: "critical"
+```
+
+Only specified fields are checked (partial matching). Dynamic fields
+(id, timestamps, duration) are ignored unless explicitly included.
+
+## Development
+
+```bash
+git clone git@github.com:qase-tms/reporters-validator.git
+cd reporters-validator
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+pytest -v
+```
