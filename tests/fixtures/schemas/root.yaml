@@ -1,0 +1,65 @@
+type: object
+properties:
+  title:
+    type: string
+  execution:
+    type: object
+    properties:
+      start_time:
+        type: number
+      end_time:
+        type: number
+      duration:
+        type: number
+      cumulative_duration:
+        type: number
+  stats:
+    type: object
+    properties:
+      total:
+        type: number
+      passed:
+        type: number
+      failed:
+        type: number
+      skipped:
+        type: number
+      blocked:
+        type: number
+      invalid:
+        type: number
+      muted:
+        type: number
+  results:
+    type: array
+    items:
+      type: object
+      properties:
+        duration:
+          type: number
+        id:
+          type: string
+        status:
+          type: string
+        thread:
+          type: string
+          nullable: true
+        title:
+          type: string
+  threads:
+    type: array
+    nullable: true
+    items:
+      type: string
+  suites:
+    type: array
+    nullable: true
+    items:
+      type: string
+  environment:
+    type: string
+    nullable: true
+  host_data:
+    type: object
+    additionalProperties:
+      type: string

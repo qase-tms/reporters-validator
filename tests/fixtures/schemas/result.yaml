@@ -1,0 +1,81 @@
+type: object
+properties:
+  attachments:
+    type: array
+    items:
+      $ref: "./models/attachment.yaml"
+  execution:
+    type: object
+    properties:
+      status:
+        type: string
+      start_time:
+        type: number
+        nullable: true
+      end_time:
+        type: number
+        nullable: true
+      duration:
+        type: number
+        nullable: true
+      stacktrace:
+        type: string
+        nullable: true
+      thread:
+        type: string
+        nullable: true
+  fields:
+    type: object
+    nullable: true
+    additionalProperties:
+      type: string
+  id:
+    type: string
+  message:
+    type: string
+    nullable: true
+  muted:
+    type: boolean
+  params:
+    type: object
+    nullable: true
+    additionalProperties:
+      type: string
+  param_groups:
+    type: array
+    nullable: true
+    items:
+      type: array
+      items:
+        type: string
+  relations:
+    type: object
+    nullable: true
+    properties:
+      suite:
+        type: object
+        properties:
+          data:
+            type: array
+            items:
+              type: object
+              properties:
+                title:
+                  type: string
+                public_id:
+                  type: number
+                  nullable: true
+  signature:
+    type: string
+    nullable: true
+  steps:
+    type: array
+    items:
+      $ref: "./models/step.yaml"
+  testops_ids:
+    type: array
+    nullable: true
+    items:
+      type: number
+  title:
+    type: string
