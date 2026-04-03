@@ -35,7 +35,7 @@ def validate_schema(report_dir: Path, schema_dir: Path) -> list[SchemaValidation
     results_dir = report_dir / "results"
     if results_dir.is_dir():
         for result_file in sorted(results_dir.glob("*.json")):
-            with open(result_file, "r", encoding="utf-8") as f:
+            with open(result_file, "r", encoding="utf-8-sig") as f:
                 result_data = json.load(f)
             errors.extend(_validate_json(result_data, result_schema, f"results/{result_file.name}"))
 
